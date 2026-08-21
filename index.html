@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mellow Shop E-commerce</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">Mellow Shop</div>
+        <div class="subtitle">ร้านออนไลน์โปรเจคจบ</div>
+      </div>
+      <div class="search-box">
+        <input id="searchInput" type="search" placeholder="ค้นหาสินค้า" />
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="active">หน้าหลัก</a>
+        <a href="about.html">เกี่ยวกับ</a>
+        <a href="contact.html">ติดต่อ</a>
+      </nav>
+      <button id="cartToggle" class="cart-button" aria-label="เปิดตะกร้าสินค้า">
+        <span>ตะกร้า</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="promo-strip">
+        <span>🎁 โปรโมชั่นปลายเดือน</span>
+        <span>สินค้าตัวใหม่พร้อมส่งใน 24 ชั่วโมง</span>
+        <span>รับประกันความพอใจ 7 วัน</span>
+      </section>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">ร้านค้าออนไลน์ที่พร้อมให้คุณช้อปสนุก</p>
+          <h1>ค้นหาสินค้าที่คุณรักได้ในหนึ่งหน้า</h1>
+          <p>เว็บ E-commerce ตัวอย่างที่ออกแบบให้ดูทันสมัย มีฟีเจอร์ค้นหา แบ่งหมวดหมู่ ตะกร้า และหน้ารายละเอียดสินค้าแบบครบวงจร</p>
+          <div class="hero-actions">
+            <a href="product.html" class="primary-btn">เลือกซื้อเลย</a>
+            <a href="about.html" class="secondary-btn">ดูจุดเด่นของร้าน</a>
+          </div>
+          <div class="hero-badges">
+            <span>🚚 ส่งไว</span>
+            <span>⭐ 4.8/5 จากลูกค้า</span>
+            <span>🔒 ปลอดภัย</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="Shopping" />
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article>
+          <strong>1,200+</strong>
+          <p>คำสั่งซื้อสำเร็จ</p>
+        </article>
+        <article>
+          <strong>24 ชม.</strong>
+          <p>จัดส่งเร็ว</p>
+        </article>
+        <article>
+          <strong>7 วัน</strong>
+          <p>คืนสินค้าได้</p>
+        </article>
+      </section>
+
+      <section class="shop-categories">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">หมวดหมู่แนะนำ</p>
+            <h2>เลือกสินค้าตามความต้องการ</h2>
+          </div>
+        </div>
+        <div class="category-chips" id="categoryChips"></div>
+      </section>
+
+      <section class="deal-banner">
+        <div>
+          <p class="eyebrow">Flash deal</p>
+          <h3>ลดสูงสุด 30% สำหรับสินค้าหลักของร้าน</h3>
+          <p>ช้อปก่อนใคร และรับประโยชน์จากโปรโมชั่นพิเศษในช่วงนี้</p>
+        </div>
+        <a href="product.html" class="primary-btn">ดูสินค้าลดราคา</a>
+      </section>
+
+      <section class="product-list" id="products">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">สินค้าขายดี</p>
+            <h2>สินค้าแนะนำสำหรับคุณ</h2>
+          </div>
+          <div class="sort-row">
+            <label for="categoryFilter">หมวดหมู่:</label>
+            <select id="categoryFilter">
+              <option value="all">ทั้งหมด</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid" id="productGrid"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div>
+        <p>Mellow Shop เป็นโปรเจคตัวอย่างสำหรับงาน ปวส. ที่ออกแบบให้เหมาะกับการนำเสนอและขยายต่อได้ง่าย</p>
+      </div>
+      <div>
+        <span>© 2026 Mellow Shop</span>
+      </div>
+    </footer>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="cart-header">
+        <h3>ตะกร้าสินค้า</h3>
+        <button id="closeCart" aria-label="ปิดตะกร้า">✕</button>
+      </div>
+      <div class="cart-content" id="cartItems"></div>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>รวม</span>
+          <strong id="cartTotal">฿0</strong>
+        </div>
+        <button id="checkoutButton" class="primary-btn">สั่งซื้อเลย</button>
+      </div>
+    </aside>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

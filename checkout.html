@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ชำระเงิน | Mellow Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">Mellow Shop</div>
+        <div class="subtitle">ระบบชำระเงินตัวอย่าง</div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="about.html">เกี่ยวกับ</a>
+        <a href="contact.html">ติดต่อ</a>
+      </nav>
+      <a href="index.html" class="cart-button compact-link">
+        <span>กลับหน้าร้าน</span>
+      </a>
+    </header>
+
+    <main class="checkout-layout">
+      <section class="checkout-form-card">
+        <div class="page-header">
+          <h1>ชำระเงิน</h1>
+          <p>กรอกข้อมูลสำหรับจัดส่งและเลือกวิธีชำระเงิน เพื่อให้คำสั่งซื้อของคุณเสร็จสิ้น</p>
+        </div>
+
+        <form id="checkoutForm" class="checkout-form">
+          <label>
+            ชื่อ-นามสกุล
+            <input id="customerName" type="text" placeholder="เช่น สมชาย ใจดี" required />
+          </label>
+          <label>
+            เบอร์โทรศัพท์
+            <input id="customerPhone" type="tel" placeholder="081-234-5678" required />
+          </label>
+          <label>
+            ที่อยู่จัดส่ง
+            <textarea id="customerAddress" rows="4" placeholder="กรอกที่อยู่สำหรับจัดส่ง" required></textarea>
+          </label>
+
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="โอนเงิน" checked />
+              <span>โอนเงินผ่านธนาคาร</span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="เก็บเงินปลายทาง" />
+              <span>เก็บเงินปลายทาง</span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="บัตรเครดิต" />
+              <span>บัตรเครดิต / เดบิต</span>
+            </label>
+          </div>
+
+          <button type="submit" class="primary-btn">ยืนยันคำสั่งซื้อ</button>
+        </form>
+      </section>
+
+      <aside class="checkout-summary">
+        <h2>สรุปคำสั่งซื้อ</h2>
+        <div id="checkoutItems" class="checkout-items"></div>
+        <div class="summary-row">
+          <span>ค่าจัดส่ง</span>
+          <strong>ฟรี</strong>
+        </div>
+        <div class="summary-row total-row">
+          <span>รวมทั้งสิ้น</span>
+          <strong id="checkoutTotal">฿0</strong>
+        </div>
+        <p class="checkout-note">คำสั่งซื้อจะถูกบันทึกในระบบทันทีหลังกดยืนยัน และคุณจะได้รับคำแนะนำเพิ่มเติมทางข้อความ</p>
+      </aside>
+    </main>
+  </div>
+
+  <script type="module" src="js/checkout.js"></script>
+</body>
+</html>
